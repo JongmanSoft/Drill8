@@ -31,16 +31,19 @@ def handle_events():
 
 
 def reset_world():
-    global running,grass
+    global running,grass,boy
     running = True
     grass = Grass()
+    boy = Boy()
 
 def update_world():
     grass.update()
+    boy.update()
 
 def render_world():
     clear_canvas()
     grass.draw()
+    boy.draw()
     update_canvas()
 
 open_canvas()
