@@ -1,14 +1,14 @@
 from pico2d import *
 
 # Game object class here
-class grass:
+class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
     def draw(self):
         self.image.draw(400,30)
     def update(self):pass
 
-Grass =grass()
+
 
 
 def handle_events():
@@ -22,14 +22,16 @@ def handle_events():
 
 
 def reset_world():
-    global running
+    global running,grass
     running = True
+    grass = Grass()
 
 def update_world():
-    pass
+    grass.update()
 
 def render_world():
     clear_canvas()
+    grass.draw()
     update_canvas()
 
 open_canvas()
