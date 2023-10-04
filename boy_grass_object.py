@@ -23,8 +23,8 @@ class Boy:
 
 class Ball:
     def __init__(self, a):
-        self.x, self.y = random.randint(100, 700), 559
-        self.speed = random.randint = (1,10)
+        self.x, self.y = random.randint(100, 700), 599
+        self.speed = random.randint (1,10)
         if (a == 0):
             self.h = 20
             self.image = load_image('ball21x21.png')
@@ -32,8 +32,8 @@ class Ball:
             self.h = 40
             self.image = load_image('ball41x41.png')
     def update(self):
-        if (self.y + self.h <80):self.y -= self.speed
-        else: self.y = 80-self.h
+        if (self.y -(self.h/2) >50): self.y -= int(self.speed) *2
+        else: self.y = 50 +(self.h/2)
     def draw(self):
         self.image.draw(self.x,self.y)
 
@@ -52,12 +52,17 @@ def reset_world():
     global grass
     global team
     global world
+    global balls
     running = True
     world = []
     grass = Grass()
     world.append(grass)
     team = [Boy() for i in range(10)]
     world += team
+    balls = [Ball(random.randint(0,1))for i in range(20)]
+    print (len(balls))
+    world += balls
+
 
 def update_world():
     for o in world:
