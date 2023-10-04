@@ -39,7 +39,7 @@ def reset_world():
 def update_world():
     grass.update()
     for boy in team:
-        boy.draw()
+        boy.update()
 
 def render_world():
     clear_canvas()
