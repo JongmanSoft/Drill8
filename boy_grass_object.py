@@ -3,6 +3,8 @@ from pico2d import *
 # Game object class here
 class grass:pass
 
+Grass =grass()
+
 
 def handle_events():
     global running
